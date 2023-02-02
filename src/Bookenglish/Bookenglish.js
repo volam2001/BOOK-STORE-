@@ -110,9 +110,11 @@ const Bookenglish = () => {
                   </div>
                   <div
                     onClick={() => addToCart(item)}
-                    className=" flex items-center justify-center font-semibold mx-[5px] border-[1px] border-black mb-[10px] cursor-pointer "
+                    className=" flex items-center justify-center font-semibold mx-[5px] border-[1px] border-black mb-[10px] cursor-pointer hover:bg-red-500 group "
                   >
-                    <p className="text-red-500">Thêm Vào Giỏ Hàng</p>
+                    <p className="text-red-500 group-hover:text-white ">
+                      Thêm Vào Giỏ Hàng
+                    </p>
                   </div>
                   <div className="bg-[#1772EE] text-white w-[100px] flex items-center justify-center absolute top-2 left-[-3px]   ">
                     <i className="fa-solid fa-check"></i>
