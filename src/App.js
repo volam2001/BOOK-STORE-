@@ -1,15 +1,16 @@
-
-import { Outlet } from 'react-router-dom';
-import Container from './Container/Container';
-import Footer from './Footer/Footer';
-import Header from './Header/Header';
+import { Outlet } from "react-router-dom";
+import { AllProvider } from "./context/AllContext";
+import Footer from "./Footer/Footer";
+import Header from "./Header/Header";
 
 function App() {
   return (
-    <div >
-      <Header></Header>
-      <Outlet></Outlet>
-      <Footer></Footer>
+    <div>
+      <AllProvider>
+        <Header></Header>
+        <Outlet></Outlet>
+        <Footer></Footer>
+      </AllProvider>
     </div>
   );
 }
