@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/images/logo3.png";
-import { allContext } from "../context/AllContext";
+import { allContext } from "../../context/AllContext";
+// import logo from "../images/logo3.png";
+import logo from "../../assets/images/logo3.png";
+
 const Header = () => {
   const { cartItem } = useContext(allContext);
   return (

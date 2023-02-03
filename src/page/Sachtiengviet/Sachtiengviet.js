@@ -1,45 +1,49 @@
 import React, { useContext } from "react";
-import { allContext } from "../context/AllContext";
+import { allContext } from "../../context/AllContext";
 
-const Souvenir = () => {
-  const { dataSouvernir, addToCart } = useContext(allContext);
+const Sachtiengviet = () => {
+  const { dataTiengviet, addToCart } = useContext(allContext);
   return (
     <div className="mx-[50px] mt-[50px]  ">
       <div className="grid grid-cols-5 gap-4  ">
         <div>
           <h1 className="font-medium ">DANH MỤC SẢN PHẨM</h1>
-          <ul className="bg-[#f1f5f9] rounded-lg">
+          <ul className="bg-[#f1f5f9]  rounded-lg">
             <li className="pl-[20px] rounded-lg  mt-[5px] hover:bg-[#5eead4]">
-              Thú Nhồi Bông
-            </li>
-            <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">Bookmark</li>
-            <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Thiệp - Bưu ảnh
+              Thơ
             </li>
             <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Quà tặng trang sức
+              Tiểu thuyết
             </li>
             <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Album - Khung Hình
+              Truyện tranh
             </li>
             <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Mô hình trang trí
+              Truyện cười
             </li>
             <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Sticker - Decal trang trí
-            </li>
-            <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">Ly - Cốc</li>
-            <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Kẹp Ảnh Gỗ
+              Truyện kinh dị
             </li>
             <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Hộp quà - Túi quà
+              Truyện dài
             </li>
             <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Móc Khóa - Phụ Kiện Trang Trí
+              Truyện kiếm hiệp
             </li>
             <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Quà tặng trang trí khác
+              Truyện trinh thám
+            </li>
+            <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
+              Truyện ngôn tình
+            </li>
+            <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
+              Ca dao tục ngữ
+            </li>
+            <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">Phê bình</li>
+            <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">Lý luận</li>
+            <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">Văn học</li>
+            <li className="pl-[20px]  mt-[5px] rounded-lg hover:bg-[#5eead4]">
+              Sách ảnh
             </li>
           </ul>
         </div>
@@ -69,11 +73,14 @@ const Souvenir = () => {
           </div>
 
           <div className="grid grid-cols-4 gap-4 mt-[20px] mb-[100px] ">
-            {dataSouvernir.length > 0 &&
-              dataSouvernir.map((item) => (
-                <div className="border border-slate-400 relative ">
+            {dataTiengviet.length > 0 &&
+              dataTiengviet.map((item) => (
+                <div
+                  key={item.id}
+                  className="border border-slate-400 relative "
+                >
                   <img className="w-full" src={item.url} alt="" />
-                  <p className="mt-[10px] font-medium mx-[5px] h-[50px] leading-5 ">
+                  <p className="mt-[10px] font-medium mx-[5px] h-[30px]  ">
                     {item.name}
                   </p>
                   <div className="w-2/3 flex justify-between mt-[10px] mx-[5px]">
@@ -120,4 +127,4 @@ const Souvenir = () => {
   );
 };
 
-export default Souvenir;
+export default Sachtiengviet;

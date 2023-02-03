@@ -1,49 +1,50 @@
 import React, { useContext } from "react";
-import { allContext } from "../context/AllContext";
+import { allContext } from "../../context/AllContext";
 
-const Sachtiengviet = () => {
-  const { dataTiengviet, addToCart } = useContext(allContext);
+const Tool = () => {
+  const { dataTool, addToCart } = useContext(allContext);
   return (
     <div className="mx-[50px] mt-[50px]  ">
       <div className="grid grid-cols-5 gap-4  ">
         <div>
           <h1 className="font-medium ">DANH MỤC SẢN PHẨM</h1>
-          <ul className="bg-[#f1f5f9]  rounded-lg">
+          <ul className="bg-[#f1f5f9] rounded-lg">
             <li className="pl-[20px] rounded-lg  mt-[5px] hover:bg-[#5eead4]">
-              Thơ
+              Dụng Cụ Văn Phòng
             </li>
             <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Tiểu thuyết
+              Bút - Viết các loại
             </li>
             <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Truyện tranh
+              Dụng Cụ Học Sinh
             </li>
             <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Truyện cười
+              Flashcards
             </li>
             <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Truyện kinh dị
+              Sổ Tay Các Loại
             </li>
             <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Truyện dài
+              Tập vở các loại
             </li>
             <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Truyện kiếm hiệp
+              Văn Hóa Phẩm
             </li>
             <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Truyện trinh thám
+              Thiết Bị Giáo Dục Trường Học
             </li>
             <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Truyện ngôn tình
+              Máy Tính Điện Tử
+            </li>
+            <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">Lịch</li>
+            <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
+              Bút Kỹ Thuật
             </li>
             <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Ca dao tục ngữ
+              Sản phẩm về giấy
             </li>
-            <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">Phê bình</li>
-            <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">Lý luận</li>
-            <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">Văn học</li>
-            <li className="pl-[20px]  mt-[5px] rounded-lg hover:bg-[#5eead4]">
-              Sách ảnh
+            <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
+              Thiết bị văn phòng
             </li>
           </ul>
         </div>
@@ -73,14 +74,11 @@ const Sachtiengviet = () => {
           </div>
 
           <div className="grid grid-cols-4 gap-4 mt-[20px] mb-[100px] ">
-            {dataTiengviet.length > 0 &&
-              dataTiengviet.map((item) => (
-                <div
-                  key={item.id}
-                  className="border border-slate-400 relative "
-                >
+            {dataTool.length > 0 &&
+              dataTool.map((item) => (
+                <div className="border border-slate-400 relative ">
                   <img className="w-full" src={item.url} alt="" />
-                  <p className="mt-[10px] font-medium mx-[5px] h-[30px]  ">
+                  <p className="mt-[10px] font-medium mx-[5px] h-[50px] leading-5 ">
                     {item.name}
                   </p>
                   <div className="w-2/3 flex justify-between mt-[10px] mx-[5px]">
@@ -111,6 +109,7 @@ const Sachtiengviet = () => {
                       Thêm Vào Giỏ Hàng
                     </p>
                   </div>
+
                   <div className="bg-[#1772EE] text-white w-[100px] flex items-center justify-center absolute top-2 left-[-3px]   ">
                     <i className="fa-solid fa-check"></i>
                     <span className="ml-[5px]">yêu thích</span>
@@ -127,4 +126,4 @@ const Sachtiengviet = () => {
   );
 };
 
-export default Sachtiengviet;
+export default Tool;

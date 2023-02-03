@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { allContext } from "../context/AllContext";
+import { allContext } from "../../context/AllContext";
 
-const Tool = () => {
-  const { dataTool, addToCart } = useContext(allContext);
+const Souvenir = () => {
+  const { dataSouvernir, addToCart } = useContext(allContext);
   return (
     <div className="mx-[50px] mt-[50px]  ">
       <div className="grid grid-cols-5 gap-4  ">
@@ -10,41 +10,36 @@ const Tool = () => {
           <h1 className="font-medium ">DANH MỤC SẢN PHẨM</h1>
           <ul className="bg-[#f1f5f9] rounded-lg">
             <li className="pl-[20px] rounded-lg  mt-[5px] hover:bg-[#5eead4]">
-              Dụng Cụ Văn Phòng
+              Thú Nhồi Bông
+            </li>
+            <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">Bookmark</li>
+            <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
+              Thiệp - Bưu ảnh
             </li>
             <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Bút - Viết các loại
+              Quà tặng trang sức
             </li>
             <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Dụng Cụ Học Sinh
+              Album - Khung Hình
             </li>
             <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Flashcards
+              Mô hình trang trí
             </li>
             <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Sổ Tay Các Loại
+              Sticker - Decal trang trí
+            </li>
+            <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">Ly - Cốc</li>
+            <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
+              Kẹp Ảnh Gỗ
             </li>
             <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Tập vở các loại
+              Hộp quà - Túi quà
             </li>
             <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Văn Hóa Phẩm
+              Móc Khóa - Phụ Kiện Trang Trí
             </li>
             <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Thiết Bị Giáo Dục Trường Học
-            </li>
-            <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Máy Tính Điện Tử
-            </li>
-            <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">Lịch</li>
-            <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Bút Kỹ Thuật
-            </li>
-            <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Sản phẩm về giấy
-            </li>
-            <li className="pl-[20px]  mt-[5px] hover:bg-[#5eead4]">
-              Thiết bị văn phòng
+              Quà tặng trang trí khác
             </li>
           </ul>
         </div>
@@ -74,8 +69,8 @@ const Tool = () => {
           </div>
 
           <div className="grid grid-cols-4 gap-4 mt-[20px] mb-[100px] ">
-            {dataTool.length > 0 &&
-              dataTool.map((item) => (
+            {dataSouvernir.length > 0 &&
+              dataSouvernir.map((item) => (
                 <div className="border border-slate-400 relative ">
                   <img className="w-full" src={item.url} alt="" />
                   <p className="mt-[10px] font-medium mx-[5px] h-[50px] leading-5 ">
@@ -109,7 +104,6 @@ const Tool = () => {
                       Thêm Vào Giỏ Hàng
                     </p>
                   </div>
-
                   <div className="bg-[#1772EE] text-white w-[100px] flex items-center justify-center absolute top-2 left-[-3px]   ">
                     <i className="fa-solid fa-check"></i>
                     <span className="ml-[5px]">yêu thích</span>
@@ -126,4 +120,4 @@ const Tool = () => {
   );
 };
 
-export default Tool;
+export default Souvenir;

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { allContext } from "../context/AllContext";
+import { allContext } from "../../context/AllContext";
 
 const Cart = () => {
   const [count, setCount] = useState(1);
