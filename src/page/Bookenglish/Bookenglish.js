@@ -1,9 +1,7 @@
-import React, { useContext } from "react";
-import { allContext } from "../../context/AllContext";
+import React from "react";
+import { Outlet } from "react-router-dom";
 
 const Bookenglish = () => {
-  const { dataEnglish, addToCart } = useContext(allContext);
-
   return (
     <div className="mx-[50px] mt-[50px]  ">
       <div className="grid grid-cols-5 gap-4  ">
@@ -52,7 +50,7 @@ const Bookenglish = () => {
           </ul>
         </div>
 
-        <div className="col-span-4">
+        {/* <div className="col-span-4">
           <div className="bg-[#f1f5f9] flex justify-around h-[50px] items-center font-medium">
             <button className="bg-[#5eead4] h-[40px] w-[150px] rounded-lg">
               Sắp xếp theo
@@ -126,7 +124,8 @@ const Bookenglish = () => {
                 </div>
               ))}
           </div>
-        </div>
+        </div> */}
+        <Outlet></Outlet>
       </div>
     </div>
   );

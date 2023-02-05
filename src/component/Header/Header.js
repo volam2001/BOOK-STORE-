@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { allContext } from "../../context/AllContext";
 // import logo from "../images/logo3.png";
 import logo from "../../assets/images/logo3.png";
@@ -33,12 +33,12 @@ const Header = () => {
               <i class="fa-solid fa-globe pr-[4px]    "></i>
               Tiếng việt
             </li>
-            <Link to="/login" className="mr-[15px]">
+            <NavLink to="/login" className="mr-[15px]">
               Đăng nhập
-            </Link>
-            <Link to="/signup" className="mr-[15px]">
+            </NavLink>
+            <NavLink to="/signup" className="mr-[15px]">
               Đăng kí
-            </Link>
+            </NavLink>
           </ul>
         </div>
         <div className="mx-[80px] mt-[10px] flex justify-around items-center">
@@ -53,7 +53,7 @@ const Header = () => {
               <i class=" text-white fa-solid fa-magnifying-glass"></i>
             </div>
           </div>
-          <Link
+          <NavLink
             to="cart"
             className=" text-[25px] text-white relative  fa-solid fa-cart-shopping"
           >
@@ -64,42 +64,42 @@ const Header = () => {
             ) : (
               ""
             )}
-          </Link>
+          </NavLink>
         </div>
       </div>
 
       <div className="w-full m-auto bg-[#EAECF2] h-[50px] flex items-center ">
         <ul className=" w-11/12 m-auto flex items-center justify-between text-lg font-semibold ">
-          <Link
+          <NavLink
             className=" w-[150px] text-center rounded-lg hover:hover:bg-[#5eead4] "
             to="/"
           >
             Trang chủ
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             className=" w-[150px] text-center rounded-lg hover:hover:bg-[#5eead4] "
             to="Sachtiengviet"
           >
             Sách Tiếng Việt
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             className=" w-[150px] text-center rounded-lg hover:hover:bg-[#5eead4] "
             to="english"
           >
             Sách Tiếng Anh
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             className=" w-[150px] text-center rounded-lg hover:hover:bg-[#5eead4] "
             to="tool"
           >
             Văn phòng phẩm
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             className=" w-[150px] text-center rounded-lg hover:hover:bg-[#5eead4] "
             to="souvenir"
           >
             Quà lưu niệm
-          </Link>
+          </NavLink>
         </ul>
       </div>
     </div>

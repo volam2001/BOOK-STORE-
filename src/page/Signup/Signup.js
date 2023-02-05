@@ -1,8 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const navigate = useNavigate();
+  function handleClick() {
+    navigate("/login");
+  }
+
   return (
-    <div className="h-[500px] bg-[#EE4D2D]">
+    <div className="h-[1000px] bg-[#EE4D2D]">
       <div className="mx-[200px] flex justify-between ">
         <div></div>
 
@@ -43,8 +49,11 @@ const Signup = () => {
             <div className="mx-[40px] text-[15px] flex items-center justify-center">
               <p className=" ">
                 Bạn đã có tài khoản?{" "}
-                <span className="text-[#EE4D2D] cursor-pointer ">
-                  Đăng nhập{" "}
+                <span
+                  onClick={handleClick}
+                  className="text-[#EE4D2D] cursor-pointer "
+                >
+                  Đăng nhập
                 </span>
               </p>
             </div>
