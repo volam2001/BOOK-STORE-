@@ -17,11 +17,11 @@ import Souvenir from "./page/Souvenir/Souvenir";
 import Sachtiengviet from "./page/Sachtiengviet/Sachtiengviet";
 import ContainEL from "./page/Bookenglish/ContainEL";
 import Chitiet from "./page/Bookenglish/Chitiet";
-
+import { AllProvider } from "./context/AllContext";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
+  <BrowserRouter>
+    <AllProvider>
       <Routes>
         <Route path="/" element={<App />}>
           <Route path="/" element={<Container />} />
@@ -37,10 +37,10 @@ root.render(
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/english/1" element={<Chitiet />} />
+        <Route path="/:id" element={<Chitiet />} />
       </Routes>
-    </BrowserRouter>
-  </React.StrictMode>
+    </AllProvider>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

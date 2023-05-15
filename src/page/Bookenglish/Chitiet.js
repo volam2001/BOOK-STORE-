@@ -1,7 +1,23 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { allContext } from "../../context/AllContext";
 import logo from "../../assets/images/logo3.png";
 const Chitiet = () => {
+  const { id } = useParams();
+  console.log("check Id", id);
+  const { dataTiengviet, dataEnglish, dataSouvernir, dataTool } =
+    useContext(allContext);
+  const results = [
+    ...dataTiengviet,
+    ...dataEnglish,
+    ...dataSouvernir,
+    ...dataTool,
+  ];
+  const result = results.find((item) => {
+    return item.id == id;
+  });
+  console.log(result);
+
   const navigate = useNavigate();
   return (
     <div className="bg-[#F5F5FA]">
@@ -23,11 +39,7 @@ const Chitiet = () => {
       <div className=" grid grid-cols-5 mx-[20px]  gap-[20px] ">
         {/* Phan hinh anh */}
         <div className="col-span-2 shadow-xl my-[50px]  ">
-          <img
-            className="w-full h-[450px] "
-            src="https://salt.tikicdn.com/cache/280x280/ts/product/3e/b8/7b/d4ac28e5e26e50815b96547fd4f868b6.jpg.webp"
-            alt=""
-          />
+          <img className="w-full h-[450px] " src={result?.url} alt="" />
         </div>
         {/* Phan noi dung */}
         <div className=" col-span-3 my-[50px]">
@@ -38,9 +50,7 @@ const Chitiet = () => {
                 Tac Gia:
                 <span className="text-blue-500 ml-[3px]">Raymond Murphy</span>
               </p>
-              <span className="text-[20px]">
-                English Grammar in Use Book w Ans
-              </span>
+              <span className="text-[20px]">{result?.name}</span>
               <div className="mt-[10px]">
                 {Array(5)
                   .fill()

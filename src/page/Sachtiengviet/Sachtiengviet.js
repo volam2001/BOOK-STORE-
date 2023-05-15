@@ -1,8 +1,13 @@
 import React, { useContext } from "react";
 import { allContext } from "../../context/AllContext";
+import { useNavigate } from "react-router-dom";
 
 const Sachtiengviet = () => {
+  const navigate = useNavigate();
   const { dataTiengviet, addToCart } = useContext(allContext);
+  const hadelingClick = (index) => {
+    navigate(`/${index}`);
+  };
   return (
     <div className="mx-[50px] mt-[50px]  ">
       <div className="grid grid-cols-5 gap-4  ">
@@ -74,12 +79,17 @@ const Sachtiengviet = () => {
 
           <div className="grid grid-cols-4 gap-4 mt-[20px] mb-[100px] ">
             {dataTiengviet.length > 0 &&
-              dataTiengviet.map((item) => (
+              dataTiengviet.map((item, index) => (
                 <div
                   key={item.id}
                   className="border border-slate-400 relative "
                 >
-                  <img className="w-full" src={item.url} alt="" />
+                  <img
+                    onClick={() => hadelingClick(item.id)}
+                    className="w-full"
+                    src={item.url}
+                    alt=""
+                  />
                   <p className="mt-[10px] font-medium mx-[5px] h-[30px]  ">
                     {item.name}
                   </p>

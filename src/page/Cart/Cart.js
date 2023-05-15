@@ -4,12 +4,20 @@ import { allContext } from "../../context/AllContext";
 const Cart = () => {
   const [count, setCount] = useState(1);
   const { cartItem, removeItem } = useContext(allContext);
-  const handleClick = () => {
-    setCount(count + 1);
+  const init = {};
+  for (let i = 0; i < cartItem.length; i++) {
+    init[`value${i}`] = 1;
+  }
+  const [arr, setArr] = useState(init);
+
+  const handleClick = (index) => {
+    console.log("check Ob", Object.keys(arr)[index], arr[`value${index}`] + 1);
+
+    setArr({ ...arr, [Object.keys(arr)[index]]: arr[`value${index}`] + 1 });
   };
-  const disClick = () => {
-    if (count > 0) {
-      setCount(count - 1);
+  const handleDisclick = (index) => {
+    if (arr[`value${index}`] > 0) {
+      setArr({ ...arr, [Object.keys(arr)[index]]: arr[`value${index}`] - 1 });
     }
   };
   return (
@@ -69,7 +77,7 @@ const Cart = () => {
         </div>
         <div className="h-auto mx-[76px]  bg-white justify-between px-[40px] items-center border-[1.5px] border-b-[#E8E8E8] ">
           {cartItem.length > 0 &&
-            cartItem.map((item) => (
+            cartItem.map((item, index) => (
               <div key={item.id} className="flex my-[20px]">
                 <input type="checkbox" />
 
@@ -92,16 +100,16 @@ const Cart = () => {
                     <span>1000đ</span>
                     <div className="mx-[60px] flex">
                       <button
-                        onClick={disClick}
+                        onClick={() => handleDisclick(index)}
                         className=" text-[30px] flex items-center justify-center w-[30px] h-[34px] border-[1.5px] border-[#E8E8E8]"
                       >
                         -
                       </button>
                       <button className="w-[58px] h-[34px] border-[1.5px] border-[#E8E8E8] ">
-                        {count}
+                        {arr[`value${index}`]}
                       </button>
                       <button
-                        onClick={handleClick}
+                        onClick={() => handleClick(index)}
                         className="w-[30px] flex items-center justify-center text-[25px] h-[34px] border-[1.5px] border-[#E8E8E8]"
                       >
                         +

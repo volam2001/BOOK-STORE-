@@ -6,11 +6,11 @@ import Header from "./component/Header/Header";
 function App() {
   return (
     <div>
-      <AllProvider>
-        <Header></Header>
-        <Outlet></Outlet>
-        <Footer></Footer>
-      </AllProvider>
+      {/* <AllProvider> */}
+      <Header></Header>
+      <Outlet></Outlet>
+      <Footer></Footer>
+      {/* </AllProvider> */}
     </div>
   );
 }

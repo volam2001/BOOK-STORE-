@@ -1,8 +1,11 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 import { allContext } from "../../context/AllContext";
 const ContainEL = () => {
+  const navigate = useNavigate();
+  const hadelingClick = (index) => {
+    navigate(`/${index}`);
+  };
   const { dataEnglish, addToCart } = useContext(allContext);
   return (
     <>
@@ -35,9 +38,12 @@ const ContainEL = () => {
             // eslint-disable-next-line array-callback-return
             dataEnglish.map((item) => (
               <div key={item.id} className="border border-slate-400 relative ">
-                <Link to="/english/1">
-                  <img className="w-full" src={item.url} alt="" />
-                </Link>
+                <img
+                  onClick={() => hadelingClick(item.id)}
+                  className="w-full"
+                  src={item.url}
+                  alt=""
+                />
                 <p className="mt-[10px] font-medium mx-[5px] h-[50px] leading-5 ">
                   {item.name}
                 </p>
