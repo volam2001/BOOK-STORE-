@@ -1,7 +1,11 @@
 import React, { useContext } from "react";
 import { allContext } from "../../context/AllContext";
-
+import { useNavigate } from "react-router-dom";
 const Tool = () => {
+  const navigate = useNavigate();
+  const hadelingClick = (index) => {
+    navigate(`/${index}`);
+  };
   const { dataTool, addToCart } = useContext(allContext);
   return (
     <div className="mx-[50px] mt-[50px]  ">
@@ -77,7 +81,12 @@ const Tool = () => {
             {dataTool.length > 0 &&
               dataTool.map((item) => (
                 <div className="border border-slate-400 relative ">
-                  <img className="w-full" src={item.url} alt="" />
+                  <img
+                    onClick={() => hadelingClick(item.id)}
+                    className="w-full"
+                    src={item.url}
+                    alt=""
+                  />
                   <p className="mt-[10px] font-medium mx-[5px] h-[50px] leading-5 ">
                     {item.name}
                   </p>

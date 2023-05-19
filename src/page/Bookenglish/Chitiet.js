@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { allContext } from "../../context/AllContext";
-import logo from "../../assets/images/logo3.png";
 const Chitiet = () => {
   const { id } = useParams();
   console.log("check Id", id);
@@ -18,11 +17,10 @@ const Chitiet = () => {
   });
   console.log(result);
 
-  const navigate = useNavigate();
   return (
     <div className="bg-[#F5F5FA]">
       {/* Phần Header */}
-      <div className="mx-[50px] flex justify-around items-center">
+      {/* <div className="mx-[50px] flex justify-around items-center">
         <img className="h-[70px] " src={logo} alt="" />
         <div className="w-1/2 bg-white h-[40px] flex justify-between items-center rounded-sm  ">
           <input
@@ -35,7 +33,7 @@ const Chitiet = () => {
           </div>
         </div>
         <Link onClick={navigate("/")}>Trang chủ</Link>
-      </div>
+      </div> */}
       <div className=" grid grid-cols-5 mx-[20px]  gap-[20px] ">
         {/* Phan hinh anh */}
         <div className="col-span-2 shadow-xl my-[50px]  ">

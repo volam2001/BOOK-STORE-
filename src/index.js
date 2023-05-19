@@ -18,26 +18,29 @@ import Sachtiengviet from "./page/Sachtiengviet/Sachtiengviet";
 import ContainEL from "./page/Bookenglish/ContainEL";
 import Chitiet from "./page/Bookenglish/Chitiet";
 import { AllProvider } from "./context/AllContext";
+import Test from "./page/Test/Test";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <AllProvider>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route path="/" element={<Container />} />
+          <Route index element={<Container />} />
           <Route path="/Sachtiengviet" element={<Sachtiengviet />} />
           {/* <Route path='/login' element={<Login/>}/> */}
           <Route path="/cart" element={<Cart />} />
           {/* <Route path="/signup" element={<Signup />} /> */}
           <Route path="/english" element={<Bookenglish />}>
             <Route index element={<ContainEL />} />
+            {/* <Route path="abc" element={<Login />}></Route> */}
           </Route>
           <Route path="/tool" element={<Tool />} />
           <Route path="/souvenir" element={<Souvenir />} />
+          <Route path="/:id" element={<Chitiet />} />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/:id" element={<Chitiet />} />
+        <Route path="/test" element={<Test />}></Route>
       </Routes>
     </AllProvider>
   </BrowserRouter>
